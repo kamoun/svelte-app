@@ -3,6 +3,7 @@ import { onMount } from 'svelte';
 import BookGrid from './BookGrid.svelte';
 import Button from '../common/Button.svelte';
 import { httpGet } from '../common/api.js';
+
 let books = []
 onMount(async function () {
     const { data } = await httpGet("/?_sort=id&_order=desc");
@@ -34,4 +35,4 @@ h1 {
 This is a library for the preople.
 </p>
 <Button>Add Book</Button>
-<BookGrid books={books} />
+<BookGrid {books} />

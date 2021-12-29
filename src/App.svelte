@@ -1,10 +1,23 @@
 <script>
-import Library from './library/Library.svelte'
+import { Route, Router } from "svelte-routing";
+import Detail from "./detail/Detail.svelte";
+import Library from './library/Library.svelte';
+export let url = ''
 </script>
 
-<main>
-	<Library />
-</main>
-
 <style>
+	main {
+		padding: var(--spacingLarge);
+	}
 </style>
+
+<Router {url}>
+<main>
+	<Route path="/books/:id" let:params>
+		<Detail id={params.id}/>
+	</Route>
+	<Route path="/">
+		<Library />
+	</Route>
+</main>
+</Router>
