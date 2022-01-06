@@ -27,12 +27,13 @@ export let books = [];
 </style>
 <ul>
 {#each books as book}
-<BookCover interactive {book} />
-{#if book.favorite}
-<div class="heart">
-    <Heart />
-</div>
-{/if}
-<li>{book.title}</li>
+    <li>
+        <BookCover interactive {book} />
+        {#if book.favorite}
+        <div class="heart">
+            <Heart />
+        </div>
+        {/if}
+    </li>
 {/each}
 </ul>

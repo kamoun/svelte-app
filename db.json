@@ -32,7 +32,8 @@
       "author": "Harper Lee",
       "cover": "https://i.imgur.com/BPmn7bUm.jpg",
       "about": "A girl learns to trust the wisdom of her father and not be dismayed by the prejudice around here.",
-      "variation": 0
+      "variation": 0,
+      "favorite": false
     },
     {
       "id": 5,
@@ -42,6 +43,15 @@
       "about": "Man hunts whale with a vengeance. In the end, he's the last man stand. I guess he won.",
       "variation": 1,
       "favorite": false
+    },
+    {
+      "title": "",
+      "author": "nnjnnjnjjn",
+      "cover": "",
+      "about": "",
+      "variation": 0,
+      "favorite": false,
+      "id": 6
     }
   ]
 }
