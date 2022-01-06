@@ -12,7 +12,7 @@
     let author = "";
     let cover = "";
     let about = "";
-  
+  $: console.log({title})
     $: book = { title, author, cover, about };
   
     async function handleSubmit(event) {
