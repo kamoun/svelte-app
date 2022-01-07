@@ -1,5 +1,7 @@
 <script>
 import { element } from "svelte/internal";
+import {createEventDispatcher} from "svelte";
+const dispatch = createEventDispatcher();
 
 
 const authors = ['Ray Bradbury', 'John Steinbeck', 'Harper Lee', 'Hermann Melville', 'malik'];
@@ -13,12 +15,10 @@ const authors = ['Ray Bradbury', 'John Steinbeck', 'Harper Lee', 'Hermann Melvil
 
 //$: console.log({author})
 let selected
-function handleSelectAuthor() {
-    console.log(selected)
-}
+
 </script>
 
-<select name="authors-list" id="author" bind:value={selected} on:change="{handleSelectAuthor}" >
+<select name="authors-list" id="author" bind:value={selected} on:change="{() => dispatch('author-select', {data: selected})}" >
     <option value="">--Please choose an option--</option>
     {#each authors as author}
         <option value={author}>{author}</option>

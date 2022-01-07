@@ -1,9 +1,7 @@
 <script>
-  import {createEventDispatcher} from "svelte";
   import { links } from "svelte-routing";
     export let book = {}
     export let interactive = false;
-    const dispatch = createEventDispatcher();
     function isValidUrl(url) {
         return url && /http.+\.(jpg|png|gif)$/.test(url);
     }

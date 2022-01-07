@@ -10,6 +10,10 @@ onMount(async function () {
     const { data } = await httpGet("/?_sort=id&_order=desc");
     books = data
 })
+
+function handleAuthorSelect(data) {
+    console.log('library',data.detail.data)
+  }
 </script>
 <style>
 header {
@@ -36,5 +40,5 @@ h1 {
 This is a library for the preople.
 </p>
 <Button to="/create">Add Book</Button>
-<Filter></Filter>
+<Filter on:author-select={handleAuthorSelect}></Filter>
 <BookGrid {books} />
