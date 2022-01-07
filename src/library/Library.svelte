@@ -3,6 +3,7 @@ import { onMount } from 'svelte';
 import BookGrid from './BookGrid.svelte';
 import Button from '../common/Button.svelte';
 import { httpGet } from '../common/api.js';
+import Filter from '../common/Filter.svelte';
 
 let books = []
 onMount(async function () {
@@ -35,4 +36,5 @@ h1 {
 This is a library for the preople.
 </p>
 <Button to="/create">Add Book</Button>
+<Filter></Filter>
 <BookGrid {books} />

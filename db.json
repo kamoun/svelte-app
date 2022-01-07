@@ -24,7 +24,7 @@
       "cover": "",
       "about": "Thousands set out from the dust bowl to California in search of better fortunes",
       "variation": 2,
-      "favorite": true
+      "favorite": false
     },
     {
       "id": 4,
@@ -52,6 +52,24 @@
       "variation": 0,
       "favorite": false,
       "id": 6
+    },
+    {
+      "title": "cfcff",
+      "author": "vfvfvvf",
+      "cover": "sdcscscc",
+      "about": "cececece",
+      "variation": 1,
+      "favorite": false,
+      "id": 7
+    },
+    {
+      "title": "au coeur de l'ocean",
+      "author": "malik",
+      "cover": "https://cdn.radiofrance.fr/s3/cruiser-production/2021/04/4645b7c5-374e-4df9-ae5b-0fa9e99c7181/500x282_000_98y472.jpg",
+      "about": "on en parlera",
+      "variation": 2,
+      "favorite": false,
+      "id": 8
     }
   ]
 }
