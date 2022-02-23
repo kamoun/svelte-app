@@ -6,13 +6,28 @@ import { httpGet } from '../common/api.js';
 import Filter from '../common/Filter.svelte';
 
 let books = []
+let author = ''
 onMount(async function () {
     const { data } = await httpGet("/?_sort=id&_order=desc");
     books = data
 })
 
-function handleAuthorSelect(data) {
+async function handleAuthorSelect(data) {
     console.log('library',data.detail.data)
+    author = data.detail.data
+    console.log('author',author)
+    if(author !== '') {
+        const { data } = await httpGet("/?_sort=id&_order=desc&author="+author)
+        if(data) {
+            console.log('ok',data)
+            $: books = data ;
+        }
+    } else {
+        const { data } = await httpGet("/?_sort=id&_order=desc")
+        if(data) {
+            $: books = data ;
+        }
+    }
   }
 </script>
 <style>
