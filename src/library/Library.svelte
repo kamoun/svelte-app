@@ -4,6 +4,8 @@ import BookGrid from './BookGrid.svelte';
 import Button from '../common/Button.svelte';
 import { httpGet } from '../common/api.js';
 import Filter from '../common/Filter.svelte';
+import { library } from "../stores/librarystore";
+console.log('library',$library);
 
 let books = []
 let author = ''
@@ -30,6 +32,9 @@ async function handleAuthorSelect(data) {
     }
   }
 </script>
+<svelte:head>
+    <title>My library</title>
+</svelte:head>
 <style>
 header {
     margin: var(--spacingMedium) 0 var(--spacingLarge) 0;
@@ -57,3 +62,7 @@ This is a library for the preople.
 <Button to="/create">Add Book</Button>
 <Filter on:author-select={handleAuthorSelect}></Filter>
 <BookGrid {books} />
+
+{#each library as lib}
+<p>{lib.name}</p>
+{/each}
